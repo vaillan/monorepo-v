@@ -1,8 +1,9 @@
+/* eslint-disable @angular-eslint/component-selector */
 import { Component, OnDestroy } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable, Subscription } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { ShareService } from 'src/app/services/share.service';
+import { ShareService } from '../../../services/share.service';
 
 @Component({
   selector: 'app-navigation',

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Injectable, OnDestroy } from '@angular/core';
 import { CanMatch, Route, Router, UrlSegment, UrlTree } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';

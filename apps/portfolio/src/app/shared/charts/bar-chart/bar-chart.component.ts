@@ -1,5 +1,6 @@
+/* eslint-disable @angular-eslint/component-selector */
 import { Component, Input } from '@angular/core';
-import { ChartConfiguration, ChartOptions, ChartType } from "chart.js";
+import { ChartConfiguration } from "chart.js";
 
 @Component({
   selector: 'app-bar-chart',

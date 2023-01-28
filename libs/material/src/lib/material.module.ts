@@ -50,19 +50,13 @@ import { NgChartsModule } from 'ng2-charts';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 import {
-  faStackOverflow,
-  faGithub,
-  faFacebook,
-  faLinkedin,
-  faPhp,
   faLaravel,
   faAngular,
   faPython,
   faJs,
   faSquareWhatsapp,
 } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase, faUserGroup } from '@fortawesome/free-solid-svg-icons';
-import { faUser } from '@fortawesome/free-regular-svg-icons';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -122,18 +116,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export class MaterialModule {
   constructor(library: FaIconLibrary) {
     library.addIcons(
-      faStackOverflow,
-      faGithub,
-      faFacebook,
-      faLinkedin,
-      faPhp,
       faLaravel,
       faAngular,
       faPython,
       faJs,
-      faDatabase,
-      faUserGroup,
-      faUser,
       faSquareWhatsapp
     );
   }

@@ -1,5 +1,7 @@
-import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
-import { ThemeService } from 'src/app/services/theme.service';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @angular-eslint/component-selector */
+import { Component, EventEmitter, Output } from '@angular/core';
+import { ThemeService } from '../../../services/theme.service';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',

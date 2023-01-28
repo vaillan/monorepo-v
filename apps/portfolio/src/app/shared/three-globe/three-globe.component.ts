@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable prefer-const */
-/* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @angular-eslint/component-selector */
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { HttpService } from './../../services/http.service';
@@ -9,7 +8,7 @@ import { Component, Input, OnDestroy } from '@angular/core';
 import ThreeGlobe from 'three-globe';
 import globeData from '../../../assets/json/globe-data.json';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
-const THREE = require('three');
+import * as THREE from 'three';
 
 @Component({
   selector: 'app-three-globe',
@@ -53,7 +52,7 @@ export class ThreeGlobeComponent implements OnDestroy {
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
       alpha: true,
-      canvas: document.getElementById('globe')
+      canvas: (document.getElementById('globe') as any)
     });
 
     renderer.setSize(globe.offsetWidth, globe.offsetHeight);

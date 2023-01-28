@@ -1,17 +1,20 @@
-import { Component, HostBinding, Inject, Input, OnDestroy, OnInit } from '@angular/core';
-import { ThemeService } from 'src/app/services/theme.service';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @angular-eslint/component-selector */
+import { Component, Input, OnDestroy } from '@angular/core';
+import { ThemeService } from '../../../services/theme.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable, Subscription } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { HttpService } from 'src/app/services/http.service';
-import { ShareService } from 'src/app/services/share.service';
+import { HttpService } from '../../../services/http.service';
+import { ShareService } from '../../../services/share.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnDestroy {
 
   @Input() sidenav: any;
   @Input() drawer: any;
@@ -42,8 +45,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.icon = "navigate_before";
     this.subscriptions.add(this.shareService.isLogged$.subscribe((isLogged: boolean) => this.isLogged = isLogged));
   }
-
-  ngOnInit() { }
 
   onThemeChange(e: boolean) {
     this.themeService.changeColorTheme(e);

@@ -1,5 +1,7 @@
+/* eslint-disable @angular-eslint/component-selector */
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component, Input } from '@angular/core';
-import { ChartConfiguration, ChartOptions, ChartType } from "chart.js";
+import { ChartConfiguration, ChartOptions } from "chart.js";
 
 @Component({
   selector: 'app-line-chart',

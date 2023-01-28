@@ -8,7 +8,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MaterialModule } from '@myorg/material';
 import { LayoutComponent } from './layout/layout.component';
-import { FooterComponent } from './layout/components/footer/footer.component';
 import { BreadcrumbModule } from 'xng-breadcrumb';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -19,11 +18,18 @@ import { MatListModule } from '@angular/material/list';
 import { SharedModule } from './shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { HeaderComponent } from './layout/components/header/header.component';
+import { FooterComponent } from './layout/components/footer/footer.component';
+import { NavigationComponent } from './layout/components/navigation/navigation.component';
+import { MenuComponent } from './layout/components/menu/menu.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent,
+    HeaderComponent,
     FooterComponent,
+    NavigationComponent,
+    MenuComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
