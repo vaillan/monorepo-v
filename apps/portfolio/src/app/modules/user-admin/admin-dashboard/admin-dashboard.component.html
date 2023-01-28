@@ -1,0 +1,23 @@
+<app-breadcrumb></app-breadcrumb>
+
+<br />
+<br />
+<br />
+
+<div class="container mx-auto grid">
+  <div class="col-6_sm-12">
+    <form>
+      <mat-form-field appearance="fill" class="w-full">
+        <input
+          type="file"
+          class="absolute top-0 z-10 h-full w-full cursor-pointer opacity-0"
+          (change)="handleFile($event)"
+        />
+        <mat-label>{{ 'Select a file' }}</mat-label>
+        <input matInput cdkFocusInitial class="z-0" [formControl]="fileControl"/>
+        <mat-icon matSuffix class="mr-2">upload_file</mat-icon>
+        <mat-hint class="mat-form-field-hint-end">Files</mat-hint>
+      </mat-form-field>
+    </form>
+  </div>
+</div>

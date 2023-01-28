@@ -1,0 +1,53 @@
+.section-header {
+  padding-top: 45px;
+}
+
+.section {
+  padding: 30px 0;
+  position: relative;
+}
+
+.points {
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  height: 1200px;
+  z-index: 0;
+}
+
+.point {
+  border-radius: 50%;
+  z-index: 999;
+  position: absolute;
+}
+
+.point-floating-1 {
+  background-color: rgb(255 0 0);
+  height: 10px;
+  width: 10px;
+  position: relative;
+  -webkit-animation-name: p1;
+  -webkit-animation-duration: 80s;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: p1;
+  animation-duration: 80s;
+  animation-iteration-count: infinite;
+  // animation-delay: 2s;
+}
+
+@keyframes p1 {
+  0% {
+    left: 800px;
+    top: 0;
+  }
+
+  50% {
+    left: 0;
+    top: 800px;
+  }
+
+  100% {
+    left: 800px;
+    top: 0;
+  }
+}

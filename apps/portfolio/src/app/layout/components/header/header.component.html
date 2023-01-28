@@ -1,0 +1,50 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <button
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="drawer.toggle()"
+    *ngIf="isHandset$ | async"
+  >
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  <button
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="drawer.toggle(); fullScreen()"
+    *ngIf="isLarge$ | async"
+  >
+    <mat-icon>{{ icon }}</mat-icon>
+  </button>
+  &nbsp;
+  <span>portfolio</span>
+  <span class="porfolio-spacer"></span>
+  <div class="">
+    <app-menu (switchMode)="onThemeChange($event)"></app-menu>
+  </div>
+  <!-- <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon>share</mat-icon>
+  </button> -->
+  <a
+    mat-button
+    *ngIf="!isLogged"
+    href="javascript:void(0)"
+    routerLink="/page/login"
+    routerLinkActive="active"
+    >Sign in</a
+  >
+
+  <a
+    mat-button
+    *ngIf="isLogged"
+    href="javascript:void(0)"
+    routerLinkActive="active"
+    (click)="logOut()"
+    >Log out</a
+  >
+</mat-toolbar>

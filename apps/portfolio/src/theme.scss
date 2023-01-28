@@ -1,0 +1,64 @@
+// src/theme.scss
+
+$crimson-palette: (
+  50: #d959f5,
+  100: #d258ff,
+  200: #c65cff,
+  300: #ba60ff,
+  400: #a764ff,
+  500: #9368ff,
+  600: #7b64ff,
+  700: #6560ff,
+  800: #5c67ff,
+  900: #5874ff,
+  contrast: (50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+// ? 1. Default theme
+$theming-material-components-primary: mat-palette($mat-indigo);
+$theming-material-components-accent: mat-palette($mat-pink, A200, A100, A400);
+$theming-material-components-warn: mat-palette($mat-red);
+
+$theming-material-components-theme: mat-light-theme(
+  $theming-material-components-primary,
+  $theming-material-components-accent,
+  $theming-material-components-warn
+);
+
+// ? 2. Define an alternate dark theme.
+// $dark-primary: mat-palette($mat-blue-grey);
+// $dark-accent: mat-palette($mat-amber, A200, A100, A400);
+// $dark-warn: mat-palette($mat-deep-orange);
+$dark-primary: mat-palette($crimson-palette, 500, 50, 300);
+$dark-accent: mat-palette($mat-amber, A200, A100, A400);
+$dark-warn: mat-palette($crimson-palette, 700);
+$dark-theme: mat-dark-theme(
+  (
+    color: (
+      primary: $dark-primary,
+      accent: $dark-accent,
+      warn: $dark-warn,
+    ),
+  )
+);
+
+// ? 3. Define a custom heading typography config
+$heading-font-family: Jost, Roboto;
+$typography: mat-typography-config(
+  $display-4: mat-typography-level(112px, $font-family: $heading-font-family),
+  $display-3: mat-typography-level(56px, $font-family: $heading-font-family),
+  $display-2: mat-typography-level(45px, $font-family: $heading-font-family),
+  $display-1: mat-typography-level(34px, $font-family: $heading-font-family),
+  $headline: mat-typography-level(24px, $font-family: $heading-font-family),
+  $title: mat-typography-level(20px, $font-family: $heading-font-family),
+);

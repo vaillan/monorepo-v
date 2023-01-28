@@ -1,0 +1,8 @@
+<div class="three-container">
+  <div class="loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <div id="globeViz" class="col grid-center globe-container">
+    <canvas id="globe"></canvas>
+  </div>
+</div>

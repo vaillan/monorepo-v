@@ -1,1 +1,267 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// import our custom theme
+@import "./theme.scss";
+
+// import custom component themes
+@import "./custom-component-themes.scss";
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+
+@include angular-material-theme($theming-material-components-theme); // ? changed
+@include custom-components-theme($theming-material-components-theme); // ? changed
+
+// ? added
+
+// Include the dark color styles inside of a block with a CSS class. You can make this
+// CSS class whatever you want. In this example, any component inside of an element with
+// `.dark-theme` will be affected by this alternate dark theme instead of the default theme.
+
+.dark-theme {
+  @include angular-material-color($dark-theme);
+}
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($typography);
+
+// ? added
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+
+
+.porfolio-spacer {
+  flex: 1 1 auto;
+}
+
+.header {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/**
+ * App Sidenav styles
+ */
+::ng-deep .mat-expansion-panel-header {
+  padding: 0 16px !important;
+}
+
+::ng-deep .mat-nav-list .mat-icon {
+  margin-right: 10px;
+}
+
+::ng-deep .mat-expansion-panel-body {
+  padding: 0 !important
+}
+
+::ng-deep .mat-expansion-panel-header {
+  height: 48px !important;
+}
+
+::ng-deep .mat-expansion-panel .mat-list-item {
+  padding-left: 15px !important;
+}
+
+::ng-deep .mat-nav-list .is-active {
+  background-color: rgb(204, 204, 204) !important;
+  border-left: 8px solid rgb(139, 137, 133);
+  width: calc(100% - 8px) !important;
+  ;
+}
+
+::ng-deep .mat-list-base {
+  padding-top: 0 !important;
+}
+
+::ng-deep .mat-nav-list .mat-list-item.is-active .mat-list-item-content {
+  padding: 0 8px;
+}
+
+/**
+ * App main styles
+ */
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar-is-mobile .sidebar-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+  width: 100%;
+}
+
+.loader-container {
+  height: 3px
+}
+
+h1.sidebar-app-name {
+  margin-left: 8px;
+  width: 185px;
+}
+
+.sidebar-sidenav-container {
+  /** When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+    *causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts.
+    */
+  flex: 1;
+  // background-color: rgb(223, 222, 222) !important;
+}
+
+.sidebar-is-mobile .sidebar-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+.mat-drawer {
+  width: 250px !important;
+}
+
+.router-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/*
+ * General styles
+ */
+
+::ng-deep .mat-form-field {
+  width: 100%;
+}
+
+.breadcrumb-none {
+  padding: 8px 16px;
+  display: inline-block;
+}
+
+.img-background {
+  background-image: url('assets/img/Header-page.png');
+  background-size: contain;
+  background-position: center;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+
+.img-background-3 {
+  background-image: url('assets/img/i-6.png');
+  background-size: contain;
+  background-position: center;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+
+.box-img {
+  display: block;
+  width: 100%;
+  height: 500px;
+}
+
+.header-spacer {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+//--
+.intro-portfolio {
+  font-size: 15px;
+}
+
+.custom-display-3 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgb(0 0 0 / 0%);
+  position: relative;
+  z-index: 0;
+}
+
+.c-1 {
+  color: rgb(203 12 159) !important;
+}
+
+
+.text-gradient.c-1 {
+  background-image: linear-gradient(310deg, rgb(121 40 202), rgb(255 0 128));
+}
+
+.align-selft-center {
+  align-self: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.card-skill {
+  background-color: none;
+  background-image: linear-gradient(310deg, #7928ca, #ff0080);
+  color: #dee2e6;
+}
+
+.fit-width-card {
+  width: fit-content;
+}
+
+.l-radius {
+  border-radius: 5px;
+}
+
+.view-port-80 {
+  height: 80vh;
+}
+
+.card {
+  width: 100%;
+}
