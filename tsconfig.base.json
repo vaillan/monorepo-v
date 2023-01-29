@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@myorg/material": ["libs/material/src/index.ts"]
+      "@myorg/material": ["libs/material/src/index.ts"],
+      "@myorg/whats-app": ["libs/whats-app/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

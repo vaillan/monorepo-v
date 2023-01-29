@@ -22,6 +22,7 @@ import { HeaderComponent } from './layout/components/header/header.component';
 import { FooterComponent } from './layout/components/footer/footer.component';
 import { NavigationComponent } from './layout/components/navigation/navigation.component';
 import { MenuComponent } from './layout/components/menu/menu.component';
+import { WhatsAppModule } from '@myorg/whats-app';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,7 @@ import { MenuComponent } from './layout/components/menu/menu.component';
     FooterComponent,
     NavigationComponent,
     MenuComponent,
-    LayoutComponent
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +49,7 @@ import { MenuComponent } from './layout/components/menu/menu.component';
     MatListModule,
     SharedModule,
     FontAwesomeModule,
+    WhatsAppModule,
   ],
   providers: [
     {
