@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component } from '@angular/core';
 
 @Component({
@@ -5,4 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './whats-app.component.html',
   styleUrls: ['./whats-app.component.scss'],
 })
-export class WhatsAppComponent {}
+export class WhatsAppComponent {
+  image_path: string = 'assets/img/whats-app.png';
+}
