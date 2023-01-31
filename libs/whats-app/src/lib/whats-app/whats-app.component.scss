@@ -21,6 +21,22 @@
   border-top: 10px solid ghostwhite;
   border-right: 10px solid ghostwhite;  
   border-bottom: 10px solid transparent;
-  transform: translate(-20px, -17%);
+  transform: translate(-20px, -19%);
   position: fixed;
+}
+
+.header-button {
+  padding-bottom: 20px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  padding-top: 25px !important;
+}
+
+.whats-app-header-radius {
+  border-top-left-radius: 10px !important; 
+  border-top-right-radius: 10px !important;
+}
+
+.whats-app-card-radius {
+  border-radius: 10px !important;
 }

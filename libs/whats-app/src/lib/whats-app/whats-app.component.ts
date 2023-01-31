@@ -10,6 +10,16 @@ export class WhatsAppComponent {
   @Input() cellPhoneNumber: number = 5951137646;
   @Input() text: string = "text=Solicitud%20de%20información";
   image_path: string = 'assets/img/whats-app.png';
+  hidden: boolean = false;
+
+  /**
+   * Función para deshabilitar badge
+   * 
+   * @returns void
+   */
+  toggleBadgeVisibility(): void {
+    this.hidden = !this.hidden;
+  }
 
   /**
    * Función para habrir ventana de whatsApp
@@ -17,7 +27,7 @@ export class WhatsAppComponent {
    * @param urlWhatsApp 
    * @returns void
    */
-  openWindow(urlWhatsApp:string): void {
+  openWindow(urlWhatsApp: string): void {
     const url = `${urlWhatsApp}/${this.cellPhoneNumber}?${this.text}`;
     window.open(url, '_blank');
   }

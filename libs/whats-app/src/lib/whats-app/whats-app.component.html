@@ -1,8 +1,12 @@
 <button
   mat-icon-button
   [cdkMenuTriggerFor]="whatsApp"
-  style="position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 2 !important"
+  [matBadgeHidden]="hidden"
+  style="position: fixed; bottom: 1.5rem; right: 2rem; z-index: 2 !important;"
   class="mat-elevation-z4"
+  matBadge="2"
+  (cdkMenuClosed)="toggleBadgeVisibility()"
+  (cdkMenuOpened)="toggleBadgeVisibility()"
 >
   <mat-icon
     svgIcon="whats_app"
@@ -11,11 +15,10 @@
 </button>
 <ng-template #whatsApp>
   <div class="whats-app" cdkMenu>
-    <div class="mat-elevation-z4">
-      <mat-card>
+    <div class="mat-elevation-z4 whats-app-card-radius">
+      <mat-card class="whats-app-card-radius">
         <mat-card-header
-          class="bg-emerald-600"
-          style="padding: 20px !important"
+          class="bg-green-600 header-button whats-app-header-radius"
         >
           <mat-card-title class="text-white">Valentin Ortiz</mat-card-title>
           <mat-card-subtitle style="color: white"
@@ -44,6 +47,7 @@
               hover:-translate-y-1 hover:scale-100 
               hover:bg-emerald-500 duration-300 
               rounded-full bg-emerald-500 py-2 px-2 w-full
+              text-white
             "
           >
             Start Chat

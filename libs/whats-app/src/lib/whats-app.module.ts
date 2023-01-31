@@ -10,6 +10,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { WHATS_APP_ICON } from './icons';
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { MatCardModule } from '@angular/material/card';
+import { MatBadgeModule } from '@angular/material/badge';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatMenuModule,
     CdkMenuModule,
-    MatCardModule
+    MatCardModule,
+    MatBadgeModule
   ],
   declarations: [WhatsAppComponent],
   exports: [WhatsAppComponent],
