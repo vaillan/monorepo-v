@@ -1,13 +1,7 @@
-
-::ng-deep .dark-theme {
-  .xng-breadcrumb-item {
-    color: #f8f9fa !important;
-  }
-
-  .xng-breadcrumb-trail {
-    color: #ced4da !important;
-  }
+::ng-deep .xng-breadcrumb-item {
+  color: #f8f9fa !important;
 }
- .width-card {
-  width: fit-content;
- }
+
+::ng-deep .xng-breadcrumb-trail {
+  color: #ced4da !important;
+}

@@ -55,6 +55,9 @@ import {
   faPython,
   faJs,
   faSquareWhatsapp,
+  faLinkedin,
+  faGithub,
+  faFacebook,
 } from '@fortawesome/free-brands-svg-icons';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -120,7 +123,10 @@ export class MaterialModule {
       faAngular,
       faPython,
       faJs,
-      faSquareWhatsapp
+      faSquareWhatsapp,
+      faLinkedin,
+      faGithub,
+      faFacebook
     );
   }
 }

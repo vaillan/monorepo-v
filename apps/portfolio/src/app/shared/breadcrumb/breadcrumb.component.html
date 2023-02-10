@@ -1,18 +1,8 @@
-<div class="col grid header-spacer">
-  <div class="width-card">
-    <div class="mat-elevation-z4">
-      <mat-card class="width-card">
-        <mat-card-content>
-          <xng-breadcrumb [separator]="iconTemplate">
-            <ng-container *xngBreadcrumbItem="let breadcrumb">
-              <ng-container>{{ breadcrumb }}</ng-container>
-            </ng-container>
-          </xng-breadcrumb>
-          <ng-template #iconTemplate>
-            <mat-icon>arrow_right</mat-icon>
-          </ng-template>
-        </mat-card-content>
-      </mat-card>
-    </div>
-  </div>
-</div>
+<xng-breadcrumb [separator]="iconTemplate">
+  <ng-container *xngBreadcrumbItem="let breadcrumb">
+    <ng-container>{{ breadcrumb }}</ng-container>
+  </ng-container>
+</xng-breadcrumb>
+<ng-template #iconTemplate>
+  <mat-icon>arrow_right</mat-icon>
+</ng-template>
