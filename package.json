@@ -23,6 +23,7 @@
     "@nrwl/angular": "15.4.8",
     "add": "^2.0.6",
     "chart.js": "^4.1.1",
+    "frame-ticker": "^1.0.3",
     "gridlex": "^2.7.1",
     "ng": "0.0.0",
     "ng2-charts": "^4.1.1",
