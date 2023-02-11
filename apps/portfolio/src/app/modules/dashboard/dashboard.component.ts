@@ -3,20 +3,22 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @angular-eslint/component-selector */
 import { HttpService } from './../../services/http.service';
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnDestroy, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { ThemePalette } from '@angular/material/core';
 import { ChartConfiguration } from "chart.js";
 import { ShareService } from '../../services/share.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnDestroy {
   @ViewChild(MatPaginator) paginator?: MatPaginator;
 
+  subscriptions: Subscription = new Subscription();
   dataToDisplay = [];
   columns: string[];
   linksPagination: any[] = [];
@@ -63,13 +65,13 @@ export class DashboardComponent {
     this.showFirstLastButtons = false;
     this.pageSize = 0;
 
-    this.httpService.getUsersGithubStored().subscribe(res => {
+    this.subscriptions.add(this.httpService.getUsersGithubStored().subscribe(res => {
       this.usersDataSource = new MatTableDataSource(res.users.data);
       this.pageSize = res.users.per_page;
       this.length = res.users.total;
       this.pageIndex = res.users.current_page - 1;
       this.linksPagination = res.users.links;
-    });
+    }));
 
     this.shareService.isLogged$.subscribe(isLogged => {
       this.disabled = isLogged ? false: true;
@@ -80,7 +82,7 @@ export class DashboardComponent {
   }
 
   private lineChart() {
-    this.httpService.getLineChartDataSet('githubAccounts').subscribe({
+    this.subscriptions.add(this.httpService.getLineChartDataSet('githubAccounts').subscribe({
       next: (res: any) => {
         const labels = Object.keys(res.data);
         const data: any = Object.values(res.data);
@@ -103,16 +105,16 @@ export class DashboardComponent {
       error: (error) => {
         console.error(error);
       }
-    });
+    }));
   }
 
   getGithubUserList() {
-    this.httpService.getLastUser().subscribe((lastUser: any) => {
+    this.subscriptions.add(this.httpService.getLastUser().subscribe((lastUser: any) => {
       const since = lastUser.user ? lastUser.user.org_id : 100;
-      this.httpService.getGithubListUsers(this.githubToken, since, 50).subscribe(res => {
+      this.subscriptions.add(this.httpService.getGithubListUsers(this.githubToken, since, 50).subscribe(res => {
         this.getUserInfoByLogin(res);
-      });
-    });
+      }));
+    }));
   }
 
 
@@ -161,34 +163,34 @@ export class DashboardComponent {
   }
 
   getUsersGithubStored() {
-    this.httpService.getUsersGithubStored().subscribe(res => {
+    this.subscriptions.add(this.httpService.getUsersGithubStored().subscribe(res => {
       this.usersDataSource = new MatTableDataSource(res.users.data);
       this.pageSize = res.users.per_page;
       this.length = res.users.total;
       this.pageIndex = res.users.current_page - 1;
       this.linksPagination = res.users.links;
-    });
+    }));
   }
 
   handlePageEvent(e: any) {
-    this.httpService.getPagination(this.linksPagination[(e.pageIndex + 1)].url).subscribe(res => {
+    this.subscriptions.add(this.httpService.getPagination(this.linksPagination[(e.pageIndex + 1)].url).subscribe(res => {
       this.pageSize = res.users.per_page;
       this.length = res.users.total;
       this.pageIndex = res.users.current_page - 1;
       this.usersDataSource = new MatTableDataSource(res.users.data);
-    });
+    }));
   }
 
   createGlobeGrophos() {
     const data = {};
-    this.httpService.createGithubGlobeGraphos(data).subscribe(res => {
+    this.subscriptions.add(this.httpService.createGithubGlobeGraphos(data).subscribe(res => {
       console.log(res);
-    })
+    }));
   }
 
   getLineChart(url: string) {
     let title = url === 'githubAccounts' ? 'Github Accounts' : 'Total Followers';
-    this.httpService.getLineChartDataSet(url).subscribe({
+    this.subscriptions.add(this.httpService.getLineChartDataSet(url).subscribe({
       next: (res: any) => {
         const labels = Object.keys(res.data);
         const data: any = Object.values(res.data);
@@ -212,11 +214,11 @@ export class DashboardComponent {
         console.error(error)
       }
     }
-    );
+    ));
   }
 
   barChart(): void {
-    this.httpService.getBarChartGraphycRepos().subscribe({
+    this.subscriptions.add(this.httpService.getBarChartGraphycRepos().subscribe({
       next: (res: any) => {
         const labels = Object.keys(res.data);
         const data: any = Object.values(res.data);
@@ -236,6 +238,10 @@ export class DashboardComponent {
       error: (error) => {
         console.log(error);
       }
-    });
+    }));
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();  
   }
 }
