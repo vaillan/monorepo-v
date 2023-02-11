@@ -12,7 +12,7 @@ import { Options } from '../core/const/http-options';
 })
 export class HttpService {
 
-  BaseUrl: string = environment.BaseUrl + environment.api;
+  BaseUrl: string = environment.API_URL + environment.api;
   
   constructor(private http: HttpClient) { }
 
