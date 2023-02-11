@@ -252,7 +252,8 @@ h1.sidebar-app-name {
 }
 
 .fit-width-card {
-  width: fit-content;
+  width: max-content;
+  height: max-content;
 }
 
 .l-radius {

@@ -1,72 +1,76 @@
-<div class="grid">
-  <div class="col-5_sm-12" style="margin-top: 2%">
+<div class="grid" style="margin: 0px -1rem;">
+  <div class="col">
     <div class="grid">
-      <div class="col-12">
-        <mat-chip-listbox aria-label="Dog selection">
-          <mat-chip color="accent" class="mat-elevation-z4">
-            <img matChipAvatar src="/assets/img/i-2.png" alt="" />
-            Software developer
-          </mat-chip>
-        </mat-chip-listbox>
+      <div class="col-5_sm-12" style="margin-top: 2%">
+        <div class="grid">
+          <div class="col-12">
+            <mat-chip-listbox aria-label="Dog selection">
+              <mat-chip color="accent" class="mat-elevation-z4">
+                <img matChipAvatar src="/assets/img/i-2.png" alt="" />
+                Software developer
+              </mat-chip>
+            </mat-chip-listbox>
+          </div>
+          <div class="col grid-12">
+            <h3 class="custom-display-3">WELCOME I'M</h3>
+            <h3 class="custom-display-3 text-gradient c-1">VALENTIN ORTIZ</h3>
+          </div>
+          <div class="col-12">
+            <p class="text-2xl font-semibold font-mono">
+              I am a Mexican Full Stack Developer
+            </p>
+          </div>
+          <div class="col-12">
+            <a
+              mat-icon-button
+              matTooltip="Facebook"
+              href="https://www.facebook.com/Val.Ortiz.93?mibextid=ZbWKwL"
+              target="_blank"
+            >
+              <fa-icon
+                [icon]="['fab', 'facebook']"
+                style="transform: scale(1.2) !important"
+              ></fa-icon>
+            </a>
+            <a
+              mat-icon-button
+              matTooltip="Github"
+              href="https://github.com/vaillan"
+              target="_blank"
+            >
+              <fa-icon
+                [icon]="['fab', 'github']"
+                style="transform: scale(1.2) !important"
+              ></fa-icon>
+            </a>
+            <a
+              mat-icon-button
+              matTooltip="Linkedin"
+              href="https://www.linkedin.com/in/valentin-ortiz-5326291a9"
+              target="_blank"
+            >
+              <fa-icon
+                [icon]="['fab', 'linkedin']"
+                style="transform: scale(1.2) !important"
+              ></fa-icon>
+            </a>
+            <a
+              mat-icon-button
+              matTooltip="WhatsApp"
+              href="https://wa.me/525951137646?text=Solicitud%20de%20soporte"
+              target="_blank"
+            >
+              <fa-icon
+                [icon]="['fab', 'square-whatsapp']"
+                style="transform: scale(1.2) !important"
+              ></fa-icon>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="col grid-12">
-        <h3 class="custom-display-3">WELCOME I'M</h3>
-        <h3 class="custom-display-3 text-gradient c-1">VALENTIN ORTIZ</h3>
-      </div>
-      <div class="col-12">
-        <p class="text-2xl font-semibold font-mono">
-          I am a Mexican Full Stack Developer
-        </p>
-      </div>
-      <div class="col-12">
-        <a
-          mat-icon-button
-          matTooltip="Facebook"
-          href="https://www.facebook.com/Val.Ortiz.93?mibextid=ZbWKwL"
-          target="_blank"
-        >
-          <fa-icon
-            [icon]="['fab', 'facebook']"
-            style="transform: scale(1.2) !important"
-          ></fa-icon>
-        </a>
-        <a
-          mat-icon-button
-          matTooltip="Github"
-          href="https://github.com/vaillan"
-          target="_blank"
-        >
-          <fa-icon
-            [icon]="['fab', 'github']"
-            style="transform: scale(1.2) !important"
-          ></fa-icon>
-        </a>
-        <a
-          mat-icon-button
-          matTooltip="Linkedin"
-          href="https://www.linkedin.com/in/valentin-ortiz-5326291a9"
-          target="_blank"
-        >
-          <fa-icon
-            [icon]="['fab', 'linkedin']"
-            style="transform: scale(1.2) !important"
-          ></fa-icon>
-        </a>
-        <a
-          mat-icon-button
-          matTooltip="WhatsApp"
-          href="https://wa.me/525951137646?text=Solicitud%20de%20soporte"
-          target="_blank"
-        >
-          <fa-icon
-            [icon]="['fab', 'square-whatsapp']"
-            style="transform: scale(1.2) !important"
-          ></fa-icon>
-        </a>
+      <div class="col-7_sm-12">
+        <app-three-globe #threeGlobe></app-three-globe>
       </div>
     </div>
-  </div>
-  <div class="col-7_sm-12">
-    <app-three-globe #threeGlobe></app-three-globe>
   </div>
 </div>
