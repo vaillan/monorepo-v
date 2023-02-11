@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL:'http://localhost:4200',
+  API_URL:'http://www.portfolio.local/',
   BaseUrl: 'http://www.portfolio.local/',
   auth: 'api/auth',
   api: 'api'
