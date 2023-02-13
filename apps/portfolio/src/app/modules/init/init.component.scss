@@ -51,3 +51,7 @@
     top: 0;
   }
 }
+
+::ng-deep .mdc-evolution-chip-set .mdc-evolution-chip {
+  z-index: 0 !important;
+}

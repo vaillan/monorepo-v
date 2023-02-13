@@ -3,7 +3,7 @@
 
 <div class="grid">
   <div class="col-12">
-    <section class="grid view-port-80">
+    <section [ngClass]="{'grid': true, 'view-port-80': isLarge$ | async}">
       <div class="col-6_sm-12">
         <div class="grid">
           <div class="col-12_sm-12">
@@ -66,7 +66,7 @@
     </div>
     <div class="col-12 grid-center">
       <div class="col_sm-6_md-4 grid-center">
-        <div class="mat-elevation-z4 l-radius">
+        <div class="mat-elevation-z4 l-radius my-4">
           <mat-card class="fit-width-card card-skill">
             <mat-card-content>
               <img mat-card-md-image src="assets/svg/php-logo.svg">
@@ -78,7 +78,7 @@
 
       </div>
       <div class="col_sm-6_md-4 grid-center">
-        <div class="mat-elevation-z4 l-radius">
+        <div class="mat-elevation-z4 l-radius my-4">
           <mat-card class="fit-width-card card-skill">
             <mat-card-content>
               <img mat-card-md-image src="assets/svg/logomark.min.svg">
@@ -89,7 +89,7 @@
         </div>
       </div>
       <div class="col_sm-6_md-4 grid-center">
-        <div class="mat-elevation-z4 l-radius">
+        <div class="mat-elevation-z4 l-radius my-4">
           <mat-card class="fit-width-card card-skill">
             <mat-card-content>
               <img mat-card-md-image src="assets/img/js-css-html.png">
@@ -98,7 +98,7 @@
         </div>
       </div>
       <div class="col_sm-6_md-6 grid-center">
-        <div class="mat-elevation-z4 l-radius">
+        <div class="mat-elevation-z4 l-radius my-4">
           <mat-card class="fit-width-card card-skill">
             <mat-card-content>
               <img mat-card-md-image src="assets/svg/git-icon.svg">
@@ -109,7 +109,7 @@
         </div>
       </div>
       <div class="col_sm-6_md-6 grid-center">
-        <div class="mat-elevation-z4 l-radius">
+        <div class="mat-elevation-z4 l-radius my-4">
           <mat-card class="fit-width-card card-skill">
             <mat-card-content>
               <img mat-card-md-image src="assets/svg/mysql-logo.svg">
@@ -118,7 +118,7 @@
         </div>
       </div>
       <div class="col_sm-6_md-12 grid-center">
-        <div class="mat-elevation-z4 l-radius">
+        <div class="mat-elevation-z4 l-radius my-4">
           <mat-card class="fit-width-card card-skill">
             <mat-card-content>
               <img mat-card-md-image src="assets/img/angular2-logo-white.png">
@@ -138,7 +138,7 @@
     </div>
     <div class="col-12 grid-center">
       <div class="col_sm-6_md-4 grid-center">
-        <div class="mat-elevation-z4 l-radius">
+        <div class="mat-elevation-z4 l-radius my-4">
           <mat-card class="fit-width-card card-skill">
             <mat-card-content>
               <img mat-card-md-image src="assets/svg/tux.svg">
@@ -148,7 +148,7 @@
 
       </div>
       <div class="col_sm-6_md-4 grid-center">
-        <div class="mat-elevation-z4 l-radius">
+        <div class="mat-elevation-z4 l-radius my-4">
           <mat-card class="fit-width-card card-skill">
             <mat-card-content>
               <img mat-card-md-image src="assets/svg/visual-studio-code-1.svg">
@@ -157,7 +157,7 @@
         </div>
       </div>
       <div class="col_sm-6_md-4 grid-center">
-        <div class="mat-elevation-z4 l-radius">
+        <div class="mat-elevation-z4 l-radius my-4">
           <mat-card class="fit-width-card card-skill">
             <mat-card-content>
               <img mat-card-md-image src="assets/svg/postman.svg">

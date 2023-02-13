@@ -21,7 +21,7 @@ const routes: Routes = [
     path: 'industria4.0',
     component: DegreeProjectComponent,
     data: {
-      breadcrumb: 'Remote controller system on a net of sensores'
+      breadcrumb: 'Industry 4.0'
     }
   },
   {

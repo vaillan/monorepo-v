@@ -5,55 +5,70 @@
   <div class="col-12_sm-12">
     <div class="grid">
       <div class="col-12_sm-12">
-        <h3 class="custom-display-3">DATA <span class="text-gradient c-1">ANALITYS</span></h3>
-        <div class="result">
-          <h4 class="e-h2">Enable the button to get more users for analyze</h4>
-          <section class="e-section">
-            <mat-slide-toggle
-              class="e-margin"
-              [color]="color"
-              [checked]="checkedB"
-              [disabled]="disabled"
-              (change)="onSlideToggle($event)"
-            >
-              Enable analyze
-            </mat-slide-toggle>
-            <mat-slide-toggle
-              class="e-margin"
-              [color]="color"
-              [checked]="checkedA"
-              [disabled]="disabled"
-              (change)="globeSwitchSlideButton($event)"
-            >
-              Enable globe graphos
-            </mat-slide-toggle>
-          </section>
+        <div class="grid">
+          <div class="col-12_sm-12">
+            <h3 class="custom-display-3">
+              DATA <span class="text-gradient c-1">ANALITYS</span>
+            </h3>
+          </div>
         </div>
-        <div class="mt-1">
-          <button
-            mat-raised-button
-            (click)="getGithubUserList()"
-            class="demo-button"
-            [disabled]="!analyzeButton"
-          >
-            Get users data
-          </button>
-          <button
-            mat-raised-button
-            (click)="createGlobeGrophos()"
-            class="demo-button"
-            [disabled]="!globeGraphosButton"
-          >
-            Create globe graphos
-          </button>
-          <button
-            mat-raised-button
-            aria-label=""
-            class="demo-button"
-            (click)="getUsersGithubStored()"
-          >
-            Update table
-          </button>
+        <div class="grid">
+          <div class="col-12_sm-12">
+            <div class="result">
+              <h4 class="e-h2">
+                Enable the button to get more users for analyze
+              </h4>
+              <section class="e-section">
+                <mat-slide-toggle
+                  class="e-margin"
+                  [color]="color"
+                  [checked]="checkedB"
+                  [disabled]="disabled"
+                  (change)="onSlideToggle($event)"
+                >
+                  Enable analyze
+                </mat-slide-toggle>
+                <mat-slide-toggle
+                  class="e-margin"
+                  [color]="color"
+                  [checked]="checkedA"
+                  [disabled]="disabled"
+                  (change)="globeSwitchSlideButton($event)"
+                >
+                  Enable globe graphos
+                </mat-slide-toggle>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="col-12">
+            <button
+              mat-raised-button
+              (click)="getGithubUserList()"
+              [disabled]="!analyzeButton"
+              class="m-4"
+            >
+              <span>Get users data</span>
+            </button>
+
+            <button
+              mat-raised-button
+              (click)="createGlobeGrophos()"
+              [disabled]="!globeGraphosButton"
+              class="m-4"
+            >
+              <span>Create globe graphos</span>
+            </button>
+
+            <button
+              mat-raised-button
+              (click)="getUsersGithubStored()"
+              class="m-4"
+            >
+              <span>Update table</span>
+            </button>
+          </div>
         </div>
       </div>
       <div class="col-12_sm-12">

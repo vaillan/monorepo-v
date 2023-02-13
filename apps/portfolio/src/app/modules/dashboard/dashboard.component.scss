@@ -2,25 +2,25 @@
     width: 100%;
 }
 
-.d-button-container {
-    padding-bottom: 16px;
-}
+// .d-button-container {
+//     padding-bottom: 16px;
+// }
 
-.d-button+.d-button {
-    margin-left: 8px;
-}
+// .d-button+.d-button {
+//     margin-left: 8px;
+// }
 
 .demo-table {
     width: 100%;
 }
 
-.demo-button-container {
-    padding-bottom: 16px;
-}
+// .demo-button-container {
+//     padding-bottom: 16px;
+// }
 
-.demo-button+.demo-button {
-    margin-left: 8px;
-}
+// .demo-button+.demo-button {
+//     margin-left: 8px;
+// }
 
 /* Structure */
 .example-container {
@@ -89,4 +89,8 @@ table {
 
 .mt-1 {
     margin-top: 1rem;
+}
+
+::ng-deep.mdc-button__label {
+    z-index: 0 !important;
 }
