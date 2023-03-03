@@ -7,7 +7,7 @@ import { HttpService } from './../../services/http.service';
 import { Component, Input, OnDestroy } from '@angular/core';
 import ThreeGlobe from 'three-globe';
 import globeData from '../../../assets/json/globe-data.json';
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import * as THREE from 'three';
 
 @Component({
